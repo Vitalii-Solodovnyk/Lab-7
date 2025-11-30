@@ -5,20 +5,17 @@
 int main(void) {
     char buffer[100];
 
-    // Wczytanie tekstu
     if (fgets(buffer, sizeof(buffer), stdin) == NULL) {
         printf("Nie jest palindromem\n");
         return 0;
     }
 
-    // Usunięcie znaku nowej linii jeśli występuje
     size_t len = strlen(buffer);
     if (len > 0 && buffer[len - 1] == '\n') {
         buffer[len - 1] = '\0';
         len--;
     }
 
-    // Sprawdzanie palindromu dwoma indeksami
     size_t left = 0;
     size_t right = len - 1;
 
